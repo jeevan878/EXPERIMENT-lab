@@ -1,0 +1,24 @@
+# Vacuum Cleaner Problem (Simple AI)
+
+def vacuum_cleaner(room):
+    position = 0  # Start at Room A
+
+    while True:
+        if room[position] == "Dirty":
+            print(f"Room {'A' if position == 0 else 'B'} is Dirty -> Cleaning")
+            room[position] = "Clean"
+        else:
+            print(f"Room {'A' if position == 0 else 'B'} is Clean")
+
+        # Check if all rooms are clean
+        if room[0] == "Clean" and room[1] == "Clean":
+            print("\nAll rooms are clean.")
+            break
+
+        # Move to next room
+        position = 1 - position
+
+# Example
+room = ["Dirty", "Dirty"]  # Room A and Room B
+
+vacuum_cleaner(room)
